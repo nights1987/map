@@ -98,4 +98,18 @@ class IndexController extends AbstractActionController
         }
     }
 ################################################################################
+    public function mapAction() 
+    {
+        try
+        {
+            echo "Google Map";
+            // $view = $this->basic();
+            // return $view;
+        }
+        catch( Exception $e )
+        {
+            print_r($e);
+        }
+    }
+################################################################################
 }

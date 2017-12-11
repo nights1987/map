@@ -29,6 +29,16 @@ return array(
                     ),
                 ),
             ),
+            'map' => array(
+                'type' => 'Literal',
+                'options' => array(
+                    'route'    => '/map',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Map',
+                        'action' => 'map'
+                    ),
+                ),
+            ),
             /*
             'xxx' => array(
                 'type' => 'Segment',
@@ -72,7 +82,7 @@ return array(
         'invokables' => array(
             //add controller
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            //'Application\Controller\Xxx' => 'Application\Controller\XxxController',
+            'Application\Controller\Map' => 'Application\Controller\MapController'
         ),
     ),
      
@@ -83,6 +93,7 @@ return array(
             #index
             'application/index/index' => __DIR__ . '/../view/index/index.phtml',
             'application/index/user' => __DIR__ . '/../view/index/user.phtml',
+            'application/index/map' => __DIR__ . '/../view/index/map.phtml',
             #layout
             'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
 			#404
@@ -114,12 +125,12 @@ return array(
     //'Zend\Db',
     'Db' => array(
         'driver' => 'Pdo',
-        'dsn' => 'mysql:dbname=nrru_db;host=nrrudb.cflaqvv1n1fo.ap-southeast-1.rds.amazonaws.com',   
+        'dsn' => 'mysql:dbname=test;host=localhost',   
         'driver_options' => array( 
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
-        'username' => 'nrru_db',
-        'password' => 'nrru6969', 
+        'username' => 'root',
+        'password' => '', 
     ),
     'service_manager' => array( 
         'factories' => array(
