@@ -35,6 +35,7 @@ class IndexController extends AbstractActionController
 ################################################################################
     public function basic()
     {
+        echo "=== INDEX CONTROLLER ===";
         $view = new ViewModel();
         //Route
         $view->lang = $this->params()->fromRoute('lang', 'th');
@@ -102,9 +103,19 @@ class IndexController extends AbstractActionController
     {
         try
         {
-            echo "Google Map";
-            // $view = $this->basic();
-            // return $view;
+            $this->redirect()->toRoute('map');
+        }
+        catch( Exception $e )
+        {
+            print_r($e);
+        }
+    }
+################################################################################
+    public function testAction() 
+    {
+        try
+        {
+            $this->redirect()->toRoute('test');
         }
         catch( Exception $e )
         {

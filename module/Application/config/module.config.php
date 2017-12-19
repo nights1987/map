@@ -35,7 +35,17 @@ return array(
                     'route'    => '/map',
                     'defaults' => array(
                         'controller' => 'Application\Controller\Map',
-                        'action' => 'map'
+                        'action' => 'index'
+                    ),
+                ),
+            ),
+            'test' => array(
+                'type' => 'Segment',
+                'options' => array(
+                    'route'    => '/test',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Test',
+                        'action' => 'index'
                     ),
                 ),
             ),
@@ -82,7 +92,8 @@ return array(
         'invokables' => array(
             //add controller
             'Application\Controller\Index' => 'Application\Controller\IndexController',
-            'Application\Controller\Map' => 'Application\Controller\MapController'
+            'Application\Controller\Map' => 'Application\Controller\MapController',
+            'Application\Controller\Test' => 'Application\Controller\TestController'
         ),
     ),
      
@@ -93,7 +104,8 @@ return array(
             #index
             'application/index/index' => __DIR__ . '/../view/index/index.phtml',
             'application/index/user' => __DIR__ . '/../view/index/user.phtml',
-            'application/index/map' => __DIR__ . '/../view/index/map.phtml',
+            'application/map/index' => __DIR__ . '/../view/index/map.phtml',
+            'application/test/index' => __DIR__ . '/../view/index/test.phtml',
             #layout
             'layout/layout' => __DIR__ . '/../view/layout/layout.phtml',
 			#404

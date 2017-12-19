@@ -30,27 +30,21 @@ class MapController extends AbstractActionController
         $this->cacheTime = 36000;
         $this->now = date("Y-m-d H:i:s");
         $this->config = include __DIR__ . '../../../../config/module.config.php';
-        $this->adapter = new Adapter($this->config['Db']);
     }
 ################################################################################
     public function basic()
     {
+        echo "=== MAP CONTROLLER ===";
         $view = new ViewModel();
-        //Route
-        // $view->lang = $this->params()->fromRoute('lang', 'th');
-        // $view->action = $this->params()->fromRoute('action', 'map');
-        // $view->id = $this->params()->fromRoute('id', '');
-        // $view->page = $this->params()->fromQuery('page', 1);
         return $view;       
     } 
 ################################################################################
-    public function mapAction() 
+    public function indexAction() 
     {
         try
         {
-            echo "Google Map";
-            // $view = $this->basic();
-            // return $view;
+            $view = $this->basic();
+            return $view;
         }
         catch( Exception $e )
         {

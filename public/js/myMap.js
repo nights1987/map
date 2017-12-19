@@ -5,7 +5,7 @@ var placeId;
 
 function initMap()
 {
-	var defaultLatLng = { lat: 13.804670, lng: 100.537090 };
+	let defaultLatLng = { lat: 13.804670, lng: 100.537090 };
 
 	map = new google.maps.Map(document.getElementById('map'),
 	{
@@ -30,7 +30,7 @@ function initMap()
 // Adds a marker to the map.
 function addMarker(location)
 {
-	var marker = new google.maps.Marker(
+	let marker = new google.maps.Marker(
 	{
 		position: location,
 		map: map,
